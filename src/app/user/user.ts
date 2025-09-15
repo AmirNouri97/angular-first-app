@@ -2,6 +2,11 @@ import { Component , computed, EventEmitter, Input,input ,output,Output,signal} 
 import { DUMMY_USERS } from '../dummy-users'
 
 const randomIndex = Math.floor(Math.random()* DUMMY_USERS.length)
+//make interface
+interface User{
+  id:string , avatar:string,name:string
+}
+
 
 @Component({
   selector: 'app-user',
@@ -9,7 +14,7 @@ const randomIndex = Math.floor(Math.random()* DUMMY_USERS.length)
   templateUrl: './user.html',
   styleUrl: './user.css'
 })
-export class User {
+export class UserComponent {
 //  selectedUser = signal(DUMMY_USERS[randomIndex])
 // imagePath = computed(()=>'assets/users/' + this.selectedUser().avatar)
 
@@ -18,9 +23,11 @@ export class User {
 // @Input({required:true}) id! : string;
 // @Input({required:true}) avatar! : string;
 // @Input({required:true}) name!: string;
-@Input({required:true}) user! :{
-  id:string , avatar:string,name:string
-}
+@Input({required:true}) user! : User
+//or
+// {
+//   id:string , avatar:string,name:string
+// }
 @Output() select = new EventEmitter()
 
   get imagePath (){

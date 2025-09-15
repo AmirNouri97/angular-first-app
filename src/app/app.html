@@ -1,10 +1,13 @@
 <app-header />
 <main>
   <ul id="users">
+    @for(user of users ; track user.id){
     <li>
-      <app-user [user]="users[0]" (select)="onSelectUser($event)" />
+      <app-user [user]="user" (select)="onSelectUser($event)" />
     </li>
-    <li>
+    }
+
+    <!-- <li>
       <app-user [user]="users[1]" (select)="onSelectUser($event)" />
     </li>
     <li>
@@ -13,18 +16,22 @@
     <li>
       <app-user [user]="users[3]" (select)="onSelectUser($event)" />
     </li>
-    <li>
-      <!-- <app-user
+    <li> -->
+    <!-- <app-user
         [id]="users[4].id"
         [name]="users[4].name"
         [avatar]="users[4].avatar"
         (select)="onSelectUser($event)"
       /> -->
-      <app-user [user]="users[4]" (select)="onSelectUser($event)" />
-    </li>
+    <!-- <app-user [user]="users[4]" (select)="onSelectUser($event)" />
+    </li> -->
   </ul>
 
-  <app-tasks *ngIf="selectedUser" [name]="selectedUser.name" />
+  <!-- <app-tasks *ngIf="selectedUser" [name]="selectedUser.name" /> -->
+  <!-- <app-tasks [name]="selectedUser ? selectedUser.name : ''" /> -->
+  @if (selectedUser) { <app-tasks [userId]="selectedUser.id" [name]="selectedUser.name" /> } @else {
+  <p id="fallback">Fallback</p>
+  }
 </main>
 
 <router-outlet />
