@@ -1,5 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { RequiredValidator } from '@angular/forms';
+import { type Task } from './task.model';
+
 
 @Component({
   selector: 'app-task',
@@ -7,6 +9,6 @@ import { RequiredValidator } from '@angular/forms';
   templateUrl: './task.html',
   styleUrl: './task.css'
 })
-export class Task {
-// @Input ({required:true}) task ?: string
+export class TaskComponent {
+@Input ({required:true}) task !: Task
 }
