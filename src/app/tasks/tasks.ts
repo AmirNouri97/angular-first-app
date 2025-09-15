@@ -1,16 +1,17 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { TaskComponent } from './task/task';
+import { NewTask } from "./new-task/new-task";
 
 @Component({
   selector: 'app-tasks',
-  imports: [TaskComponent],
+  imports: [TaskComponent, NewTask],
   templateUrl: './tasks.html',
   styleUrl: './tasks.css'
 })
 export class Tasks {
   @Input({required:true}) name?: string ;
   @Input({required:true}) userId?:string;
-
+  isAddingTask = false;
 
   dummyTasks = [
   {
@@ -44,5 +45,12 @@ get selectedUserTasks(){
 
 onCompleteTask(id: string){
 this.dummyTasks = this.dummyTasks.filter(tasks=>tasks.id !==id )
+}
+
+onStartAddTask(){
+this.isAddingTask =true;
+}
+onCancelAddTask(){
+  this.isAddingTask =false;
 }
 }
