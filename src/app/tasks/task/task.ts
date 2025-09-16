@@ -2,11 +2,11 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { RequiredValidator } from '@angular/forms';
 import { type Task } from './task.model';
 import { Card } from "../../shared/card/card";
-
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-task',
-  imports: [Card],
+  imports: [Card,DatePipe],
   templateUrl: './task.html',
   styleUrl: './task.css'
 })
