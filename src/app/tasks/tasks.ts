@@ -22,18 +22,22 @@ get selectedUserTasks(){
   return this.tasksService.getUserTasks(this.userId)
 }
 
-onCompleteTask(id: string){
-this.tasksService.removeTask(id)
-}
+// onCompleteTask(id: string){
+// this.tasksService.removeTask(id)
+// }
 
 onStartAddTask(){
 this.isAddingTask =true;
 }
-onCancelAddTask(){
+onCloseAddTask(){
   this.isAddingTask =false;
 }
-onAddTask(taskData:NewTaskData){
-  this.tasksService.addTask(taskData,this.userId)
-   this.isAddingTask =false;
-}
+// onCancelAddTask(){
+//   this.isAddingTask =false;
+// }
+//اینو دیگه لازم نداریم
+// onAddTask(taskData:NewTaskData){
+//   this.tasksService.addTask(taskData,this.userId)
+//    this.isAddingTask =false;
+// }
 }
