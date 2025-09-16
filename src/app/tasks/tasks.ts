@@ -6,9 +6,10 @@ import { TaskService } from './tasks.service';
 
 @Component({
   selector: 'app-tasks',
-  imports: [TaskComponent, NewTask],
+  // imports: [TaskComponent, NewTask],
   templateUrl: './tasks.html',
-  styleUrl: './tasks.css'
+  styleUrl: './tasks.css',
+  standalone:false
 })
 export class Tasks {
   @Input({required:true}) name?: string ;

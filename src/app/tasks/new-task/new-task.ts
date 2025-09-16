@@ -5,9 +5,10 @@ import { TaskService } from '../tasks.service';
 
 @Component({
   selector: 'app-new-task',
-  imports: [FormsModule],
+  // imports: [FormsModule],
   templateUrl: './new-task.html',
-  styleUrl: './new-task.css'
+  styleUrl: './new-task.css',
+  standalone:false
 })
 export class NewTask {
 

@@ -8,9 +8,10 @@ import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, HeaderComponent, UserComponent, Tasks,CommonModule],
+  // imports: [RouterOutlet, HeaderComponent, UserComponent, Tasks,CommonModule],
   templateUrl: './app.html',
   styleUrl: './app.css',
+  standalone:false
 })
 export class App {
   users = DUMMY_USERS

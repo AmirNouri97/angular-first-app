@@ -9,9 +9,10 @@ const randomIndex = Math.floor(Math.random()* DUMMY_USERS.length)
 
 @Component({
   selector: 'app-user',
-  imports: [Card],
+  // imports: [Card],
   templateUrl: './user.html',
-  styleUrl: './user.css'
+  styleUrl: './user.css',
+  standalone:false
 })
 export class UserComponent {
 //  selectedUser = signal(DUMMY_USERS[randomIndex])
