@@ -1,6 +1,7 @@
 import { Component , computed, EventEmitter, Input,input ,output,Output,signal} from '@angular/core';
 import { DUMMY_USERS } from '../dummy-users'
 import { User } from './user.model';
+import { Card } from "../shared/card/card";
 const randomIndex = Math.floor(Math.random()* DUMMY_USERS.length)
 //make interface
 
@@ -8,7 +9,7 @@ const randomIndex = Math.floor(Math.random()* DUMMY_USERS.length)
 
 @Component({
   selector: 'app-user',
-  imports: [],
+  imports: [Card],
   templateUrl: './user.html',
   styleUrl: './user.css'
 })
