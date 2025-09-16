@@ -7,3 +7,9 @@ export interface Task {
     dueDate: string,
   
 }
+
+export interface NewTaskData{
+    title:string,
+    summery:string,
+    date:string
+}
